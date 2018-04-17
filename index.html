@@ -26,21 +26,17 @@
 <div>
   <p><button data-bind='click: loadUserData'>Load Music Events</button></p>
 <label for="search">Filter: </label>
-<input name="search" data-bind="textInput: filter">
+<input name="search" data-bind="textInput: filter" placeholder="Venue or Artist Begins with...">
   <table>
     <thead><tr>
         <th>Venue</th>
         <th>Artist</th>
-        <th>Date</th>
 
     </tr></thead>
-    <tbody data-bind="foreach: items()">
+    <tbody data-bind="foreach: filteredItems()">
         <tr>
             <td data-bind="text: $data.venue.displayName"></td>
             <td data-bind="text: $data.performance[0].artist.displayName"></td>
-            <td data-bind="text: $data.start.date"></td>
-
-
         </tr>
     </tbody>
 </table>
@@ -53,8 +49,9 @@
 </script>
 
   <script src="js/lib/bower_components/knockout/dist/knockout.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>  <script src="js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdEAz6kc21FQuk8hDAiL2vjLrXlTAKnXs&v=3&callback=initMap"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
