@@ -29,11 +29,18 @@
 <input name="search" data-bind="textInput: filter">
   <table>
     <thead><tr>
-        <th>Event</th>
+        <th>Venue</th>
+        <th>Artist</th>
+        <th>Date</th>
+
     </tr></thead>
-    <tbody data-bind="foreach: items">
+    <tbody data-bind="foreach: items()">
         <tr>
-            <td data-bind="text: displayName"></td>
+            <td data-bind="text: $data.venue.displayName"></td>
+            <td data-bind="text: $data.performance[0].artist.displayName"></td>
+            <td data-bind="text: $data.start.date"></td>
+
+
         </tr>
     </tbody>
 </table>
